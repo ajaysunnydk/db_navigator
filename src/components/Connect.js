@@ -2,13 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 export default function Connect() {
-
-    const [reqBody,setReqBody] = React.useState({});
+  
     const navigate = useNavigate();
     const handleSubmit = (event) => {
-        debugger;
         event.preventDefault();
         console.log("CONNECT CLICKED")
 
@@ -26,7 +23,6 @@ export default function Connect() {
         const databody = JSON.stringify(data);
         axios.post("http://localhost:8080/dextrus/connect", databody, { headers: headers, cache: false })
             .then(resp => {
-                setReqBody(databody)
                 if (resp.data === "Connected to SQL Server") {
                     console.log("Connected")
                     navigate("/home",{state:databody});

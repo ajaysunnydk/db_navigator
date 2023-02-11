@@ -34,3 +34,7 @@
     align-items: flex-start;
     gap: 5px;
 }
+
+.catalog-button{
+border: none;
+}
