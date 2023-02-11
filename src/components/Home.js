@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import Schemas from "./Schemas";
 import './style.css'
 
 const Home = () => {
@@ -11,11 +12,14 @@ const Home = () => {
         'Accept': 'application/json',
         'withCredentials': true
     };
-    const [topics, setTopics] = useState([]);
-    if (topics.length === 0) {
+    const [catalogs, setCatalogs] = useState([]);
+    const [expandedCatalog, setExpandedCatalog] = useState(null);
+    const [schemas, setSchemas] = useState({});
+
+    if (catalogs.length === 0) {
         axios.post("http://localhost:8080/dextrus/", reqBody, { headers: headers, cache: false })
             .then(resp => {
-                setTopics(resp.data)
+                setCatalogs(resp.data)
                 console.log(resp.data)
             }).catch(error => {
                 console.log("catch")
@@ -23,17 +27,24 @@ const Home = () => {
             });
     }
 
-    const toggleExpand = (topic) => {
-        console.log(topic + " Clicked")
-    }
+    const toggleExpand = (catalog) => {
+        setExpandedCatalog(prevTopic => prevTopic === catalog ? null : catalog);
+      };
+
+    
 
     return (
         <div className="left-nav">
             <div className="catalogs-list" >
-                {topics.map((topic,index) => (
-                    <button key={index} className="catalog-button" onClick={() => toggleExpand(topic)}>
-                        {topic}
-                    </button>
+                {catalogs.map(catalog => (
+                    <div key={catalog}>
+                        <button className="catalog-button" onClick={() => toggleExpand(catalog)}>
+                            {catalog}
+                        </button>
+                        {expandedCatalog === catalog && (
+                            <Schemas body={reqBody} schemas={catalog} />
+                        )}
+                    </div>
                 ))}
             </div>
         </div>
