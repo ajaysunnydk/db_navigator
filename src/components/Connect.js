@@ -29,7 +29,7 @@ export default function Connect() {
                 setReqBody(databody)
                 if (resp.data === "Connected to SQL Server") {
                     console.log("Connected")
-                    navigate("/home",{state:{reqBody:reqBody}});
+                    navigate("/home",{state:databody});
                 }
             })
             .catch(error => {

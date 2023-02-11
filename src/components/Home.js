@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 const Home = () => {
     debugger;
     const location = useLocation();
-    const reqBody = location.state.reqBody;
+    const reqBody = location.state;
     const headers = {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -42,11 +42,11 @@ const Home = () => {
     return (
         <ul>
             {topics.map(topic => (
-                <li key={topic.title}>
-                    <button onClick={() => toggleExpand(topic.title)}>
-                        {topic.title}
+                <li key={topic}>
+                    <button onClick={() => toggleExpand(topic)}>
+                        {topic}
                     </button>
-                    {expandedTopics.includes(topic.title) && (
+                    {expandedTopics.includes(topic) && (
                         <ul>
                             {topic.subTopics.map(subTopic => (
                                 <li key={subTopic.id}>{subTopic.title}</li>
