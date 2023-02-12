@@ -14,7 +14,7 @@ const Home = () => {
     };
     const [catalogs, setCatalogs] = useState([]);
     const [expandedCatalog, setExpandedCatalog] = useState(null);
-    const [schemas, setSchemas] = useState({});
+    
 
     if (catalogs.length === 0) {
         axios.post("http://localhost:8080/dextrus/", reqBody, { headers: headers, cache: false })
@@ -32,7 +32,6 @@ const Home = () => {
       };
 
     
-
     return (
         <div className="left-nav">
             <div className="catalogs-list" >
@@ -48,8 +47,6 @@ const Home = () => {
                 ))}
             </div>
         </div>
-
-
     );
 };
 
