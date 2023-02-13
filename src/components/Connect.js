@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Connect() {
   
@@ -15,7 +17,7 @@ export default function Connect() {
             'withCredentials': true
         };
         const data = {
-            'url': event.target.url.value,
+            'url': event.target.url.value+"; encrypt=false",
             'username': event.target.username.value,
             'password': event.target.password.value
         };
@@ -30,7 +32,7 @@ export default function Connect() {
             })
             .catch(error => {
                 console.log(error)
-                alert("Not Connected")
+                toast.error("Not Connected")
             });
 
     }
@@ -51,6 +53,7 @@ export default function Connect() {
                 </div>
                 <button type="submit" className="btn btn-primary">Connect</button>
             </form>
+            <ToastContainer />
         </div>
     )
 }
