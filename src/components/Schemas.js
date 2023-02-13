@@ -1,12 +1,11 @@
-import React from 'react'
+import React from 'react';
 import axios from "axios";
 import { useState } from "react";
-import './style.css'
+import './style.css';
 import Tables from './Tables';
 import Views from './Views';
 
 export default function Schemas(props) {
-    debugger;
     const headers = {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -15,6 +14,7 @@ export default function Schemas(props) {
     const [schemas, setSchemas] = useState([]);
     const reqBody = props.body;
     const selectedCatalog = props.schemas;
+    
 
     if (schemas.length === 0) {
         const url = "http://localhost:8080/dextrus/" + selectedCatalog;
@@ -45,9 +45,9 @@ export default function Schemas(props) {
     };
 
     return (
-        <div className="schemas-list" >
+        <div >
             {schemas.map(schema => (
-                <div key={schema}>
+                <div key={schema}  className="schemas-list">
                     <button className="schema-button" onClick={() => toggleExpand(schema)}>
                         {schema}
                     </button>

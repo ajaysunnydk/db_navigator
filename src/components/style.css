@@ -17,7 +17,6 @@
 
 .left-nav {
     padding-top: 20px;
-    padding-left: 20px;
     height: 92vh;
     overflow-y: scroll;
     background-color: #f2f2f2;
@@ -30,37 +29,19 @@
 .catalogs-list,
 .schemas-list,
 .tables-views-buttons,
-.tables-list {
+.tables-list,
+.columns-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
-}
-
-.tables-list{
-    border: 1px solid chocolate;
-}
-
-.schema-button {
-    margin-left: 15px;
-    background-color: #d9d9d9;
-}
-
-.tables-views-buttons{
-    margin-left: 15px;
-}
-
-.tables-views-buttons button {
-    margin-left: 30px;
-    border: none;
-}
-
-.tables-button{
-    margin-left: 50px;
+    width: 100%;
+    padding-left: 15px;
 }
 
 .catalog-button,
 .schema-button,
-.tables-button {
+.tables-button,
+.tables-views-buttons button{
     border: none;
 }

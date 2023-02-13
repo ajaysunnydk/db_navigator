@@ -26,7 +26,7 @@ export default function Connect() {
         axios.post("http://localhost:8080/dextrus/connect", databody, { headers: headers, cache: false })
             .then(resp => {
                 if (resp.data === "Connected to SQL Server") {
-                    console.log("Connected")
+                    toast.success("Connection Successful")
                     navigate("/home",{state:databody});
                 }
             })
