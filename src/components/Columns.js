@@ -19,10 +19,14 @@ export default function Columns(props) {
     }
 
     return (
-        <div className='columns-list'>
+        <div >
             {
-                columns.map(column=>(
-                    <div className='column-name'>{column}</div>
+                columns.map(column => (
+                    <div className='columns-list'>
+                        <i style={{color:"#0d6efd"}} className="bi bi-layout-three-columns"></i>
+                        <div className='column-name'>{column}</div>
+                    </div>
+
                 ))
             }
         </div>

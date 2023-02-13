@@ -14,7 +14,7 @@ export default function Schemas(props) {
     const [schemas, setSchemas] = useState([]);
     const reqBody = props.body;
     const selectedCatalog = props.schemas;
-    
+
 
     if (schemas.length === 0) {
         const url = "http://localhost:8080/dextrus/" + selectedCatalog;
@@ -47,19 +47,23 @@ export default function Schemas(props) {
     return (
         <div >
             {schemas.map(schema => (
-                <div key={schema}  className="schemas-list">
+                <div key={schema} className="schemas-list">
                     <button className="schema-button" onClick={() => toggleExpand(schema)}>
-                        {schema}
+                        <i style={{color:"#0d6efd"}} className="bi bi-diagram-2-fill"></i>{schema}
                     </button>
                     {expandedSchema === schema && (
                         <div className='tables-views-buttons'>
-                            <button onClick={()=>handleTablesButton()}>Tables</button>
+                            <div onClick={() => handleTablesButton()}>
+                            <i className="bi bi-card-checklist" style={{color:"#0d6efd",marginLeft:"5px"}}></i><button>Tables</button>
+                            </div>
                             {
-                                showTables && <Tables body={reqBody} headers={headers} catalog={selectedCatalog} schema={schema}/>
+                                showTables && <Tables body={reqBody} headers={headers} catalog={selectedCatalog} schema={schema} />
                             }
-                            <button onClick={()=>handleViewsButton()}>Views</button>
+                            <div onClick={() => handleViewsButton()}>
+                            <i className="bi bi-card-checklist" style={{color:"#0d6efd",marginLeft:"5px"}}></i><button>Views</button>
+                            </div>
                             {
-                                showViews && <Views body={reqBody} headers={headers} catalog={selectedCatalog} schema={schema}/>
+                                showViews && <Views body={reqBody} headers={headers} catalog={selectedCatalog} schema={schema} />
                             }
                         </div>
                     )}

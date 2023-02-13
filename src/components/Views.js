@@ -39,7 +39,7 @@ export default function Views(props) {
             {tables.map(table => (
                 <div key={table} className='tables-list'>
                     <button style={{ border: "none" }} className='tables-button' onClick={() => toggleExpand(table)}>
-                        {table}
+                        <i className="bi bi-table" style={{color:"#0d6efd",paddingRight:"5px"}}></i>{table}
                     </button>
                     {
                         expandedTable === table && (

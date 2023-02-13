@@ -29,10 +29,17 @@
 .catalogs-list,
 .schemas-list,
 .tables-views-buttons,
-.tables-list,
-.columns-list {
+.tables-list {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    width: 100%;
+    padding-left: 15px;
+}
+.columns-list{
+    display: flex;
+    flex-direction: row;
     align-items: flex-start;
     gap: 5px;
     width: 100%;
@@ -44,4 +51,6 @@
 .tables-button,
 .tables-views-buttons button{
     border: none;
+    width: max-content;
 }
+
