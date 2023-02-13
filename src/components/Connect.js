@@ -38,7 +38,7 @@ export default function Connect() {
         <div style={{ boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px" }} className='container w-50 mt-5 p-3 rounded-3'>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3 d-flex justify-content-between gap-5">
-                    <label className="form-label">URL</label>
+                    <label className="form-label" style={{marginRight:"40px"}}>URL</label>
                     <input type="text" name="url" className="form-control" />
                 </div>
                 <div className="mb-3 d-flex justify-content-between gap-5">
