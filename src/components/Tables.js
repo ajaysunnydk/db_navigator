@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from "axios";
 import './style.css'
 import Columns from './Columns';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Tables(props) {
 
@@ -9,9 +11,13 @@ export default function Tables(props) {
     const [tables, setTables] = useState([]);
 
     if (tables.length === 0) {
+        toast.dismiss();
+        toast.loading("Loading Tables")
         axios.post(url, props.body, { headers: props.headers, cache: false })
             .then(resp => {
                 if (resp.data.length !== 0) {
+                    toast.dismiss()
+                    toast.success("Tables Loaded")
                     const tableNames = resp.data
                         .filter(table => table.table_type === 'BASE TABLE')
                         .map(table => table.table_name);
@@ -19,7 +25,8 @@ export default function Tables(props) {
                 }
                 else {
                     console.log("no tables")
-                    alert("No tables in selected Catalog/Schema")
+                    toast.dismiss()
+                    toast.info("No Tables in the Selected Schema/Catalog")
                 }
             }).catch(error => {
                 console.log("catch")

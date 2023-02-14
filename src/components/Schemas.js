@@ -4,6 +4,7 @@ import { useState } from "react";
 import './style.css';
 import Tables from './Tables';
 import Views from './Views';
+import { toast } from 'react-toastify';
 
 export default function Schemas(props) {
     const headers = {
@@ -17,11 +18,17 @@ export default function Schemas(props) {
 
 
     if (schemas.length === 0) {
+        toast.dismiss();
+        toast.loading("Loading Schemas")
         const url = "http://localhost:8080/dextrus/" + selectedCatalog;
         axios.post(url, reqBody, { headers: headers, cache: false })
             .then(resp => {
-                setSchemas(resp.data)
-                console.log(resp.data)
+                if(resp.data.length!==0){
+                    toast.dismiss();
+                    toast.success("Schemas Loaded")
+                    setSchemas(resp.data)
+                    console.log(resp.data)
+                }
             }).catch(error => {
                 console.log("catch")
                 console.log(error)

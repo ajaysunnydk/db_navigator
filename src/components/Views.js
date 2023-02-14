@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from "axios";
 import './style.css'
 import Columns from './Columns';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Views(props) {
 
@@ -9,9 +11,13 @@ export default function Views(props) {
     const [tables, setTables] = useState([]);
 
     if (tables.length === 0) {
+        toast.dismiss();
+        toast.loading("Loading Views")
         axios.post(url, props.body, { headers: props.headers, cache: false })
             .then(resp => {
                 if (resp.data.length !== 0) {
+                    toast.dismiss()
+                    toast.success("Views Loaded")
                     const tableNames = resp.data
                         .filter(table => table.table_type === 'VIEW')
                         .map(table => table.table_name);
@@ -19,7 +25,8 @@ export default function Views(props) {
                 }
                 else {
                     console.log("no views")
-                    alert("No views in selected Catalog/Schema")
+                    toast.dismiss()
+                    toast.info("No Views in the Selected Schema/Catalog")
                 }
             }).catch(error => {
                 console.log("catch")
