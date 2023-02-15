@@ -26,6 +26,7 @@ export default function Connect() {
         axios.post("http://192.168.0.157:8080/dextrus/connect", databody, { headers: headers, cache: false })
             .then(resp => {
                 if (resp.status === 200) {
+                    toast.dismiss();
                     toast.success("Connection Successful")
                     navigate("/home",{state:databody});
                 }
