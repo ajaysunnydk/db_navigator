@@ -6,8 +6,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Tables(props) {
+    const ip = "192.168.0.157"
 
-    const url = "http://localhost:8080/dextrus/" + props.catalog + "/" + props.schema;
+    const url = "http://"+ip+":8080/dextrus/" + props.catalog + "/" + props.schema;
     const [tables, setTables] = useState([]);
 
     if (tables.length === 0) {

@@ -21,7 +21,7 @@ const Home = () => {
     console.log(catalogs.length)
     if (catalogs.length === 0) {
 
-        axios.post("http://localhost:8080/dextrus/", reqBody, { headers: headers, cache: false })
+        axios.post("http://192.168.0.157:8080/dextrus/", reqBody, { headers: headers, cache: false })
             .then(resp => {
 
                 setCatalogs(resp.data)

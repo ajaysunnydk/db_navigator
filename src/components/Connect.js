@@ -23,9 +23,9 @@ export default function Connect() {
         };
 
         const databody = JSON.stringify(data);
-        axios.post("http://localhost:8080/dextrus/connect", databody, { headers: headers, cache: false })
+        axios.post("http://192.168.0.157:8080/dextrus/connect", databody, { headers: headers, cache: false })
             .then(resp => {
-                if (resp.data === "Connected to SQL Server") {
+                if (resp.status === 200) {
                     toast.success("Connection Successful")
                     navigate("/home",{state:databody});
                 }
@@ -37,7 +37,8 @@ export default function Connect() {
 
     }
     return (
-        <div style={{ boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px" }} className='container w-50 mt-5 p-3 rounded-3'>
+        <div className='container' style={{marginTop:"30px"}}>
+        <div style={{ boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px" }} className='container col-sm-6 p-3 rounded-3'>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3 d-flex justify-content-between gap-5">
                     <label className="form-label" style={{marginRight:"40px"}}>URL</label>
@@ -54,6 +55,7 @@ export default function Connect() {
                 <button type="submit" className="btn btn-primary">Connect</button>
             </form>
             <ToastContainer />
+        </div>
         </div>
     )
 }

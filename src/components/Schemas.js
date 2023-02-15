@@ -15,12 +15,12 @@ export default function Schemas(props) {
     const [schemas, setSchemas] = useState([]);
     const reqBody = props.body;
     const selectedCatalog = props.schemas;
-
+    const ip = "192.168.0.157"
 
     if (schemas.length === 0) {
         toast.dismiss();
         toast.loading("Loading Schemas")
-        const url = "http://localhost:8080/dextrus/" + selectedCatalog;
+        const url = "http://"+ip+":8080/dextrus/" + selectedCatalog;
         axios.post(url, reqBody, { headers: headers, cache: false })
             .then(resp => {
                 if(resp.data.length!==0){
