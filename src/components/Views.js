@@ -55,6 +55,7 @@ export default function Views(props) {
                     }
                 </div>
             ))}
+            <ToastContainer/>
         </div>
     )
 }

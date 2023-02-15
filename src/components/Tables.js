@@ -54,6 +54,7 @@ export default function Tables(props) {
                     }
                 </div>
             ))}
+            <ToastContainer/>
         </div>
     )
 }
