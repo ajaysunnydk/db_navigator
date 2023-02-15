@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Introduction:
+The db_navigator is a React project that allows users to connect to a data source and fetch objects such as catalogs, schemas, tables, and columns. The project uses a Spring Boot application as a backend that is located in https://github.com/ajaysunnydk/dextrus-spring-boot repository. The project provides a dynamic tree view of objects and is intended to be used as a tool to explore and interact with a data source.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prerequisites:
+Before using the db_navigator project, ensure that you have the following prerequisites installed on your system:
 
-## Available Scripts
+* Node.js
+* npm (Node Package Manager)
+* React
 
-In the project directory, you can run:
+## Getting Started:
 
-### `npm start`
+* Clone the project from the repository using the following command:
+`git clone https://github.com/ajaysunnydk/db_navigator.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Navigate to the project directory in your terminal or command prompt.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Install the required packages by running the following command:
+`npm install`
 
-### `npm test`
+* Start the project by running the following command:
+`npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* The project will now be accessible on http://localhost:3000.
 
-### `npm run build`
+## Usage:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Connect to a data source by clicking on the 'Connect' button in the header of the application.
+Enter the required connection details such as host, port, username, and password in the 'Connect' dialog.
+Click on the 'Connect' button to establish a connection to the data source.
+Once connected, the tree view on the left-hand side of the application will display the available catalogs in the data source.
+Click on the arrow next to a catalog to display the schemas within the catalog.
+Click on the arrow next to a schema to display the tables within the schema.
+Click on the arrow next to a table to display the columns within the table.
+To disconnect from the data source, click on the 'Disconnect' button in the header of the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Note:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The project currently only supports MSSQL data sources.
+The project may not work as expected for all data sources and may require additional configuration to work correctly.
+The project is intended to be used as a tool to explore and interact with a data source and should not be used in a production environment.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Conclusion:
+The db_navigator project is a React application that provides a dynamic tree view of objects within a data source. It is intended to be used as a tool to explore and interact with a data source and requires a Spring Boot application as a backend. The project provides a simple and intuitive interface for users to interact with the data source and is suitable for both novice and experienced users.
