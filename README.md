@@ -11,12 +11,12 @@ Before using the db_navigator project, ensure that you have the following prereq
 ## Getting Started:
 
 Clone the project from the repository using the following command:
-### git clone https://github.com/ajaysunnydk/db_navigator.git
+### ```git clone https://github.com/ajaysunnydk/db_navigator.git```
 Navigate to the project directory in your terminal or command prompt.
 Install the required packages by running the following command:
-### npm install
+### ```npm install```
 Start the project by running the following command:
-###npm start
+### ```npm start```
 The project will now be accessible on http://localhost:3000.
 
 ## Usage:
