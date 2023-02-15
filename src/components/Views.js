@@ -55,7 +55,7 @@ export default function Views(props) {
                     }
                 </div>
             ))}
-            <ToastContainer/>
+            <ToastContainer limit={1}/>
         </div>
     )
 }

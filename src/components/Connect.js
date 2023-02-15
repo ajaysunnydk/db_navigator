@@ -38,7 +38,7 @@ export default function Connect() {
 
     }
     return (
-        <div className='container' style={{marginTop:"30px"}}>
+        <div className='container' style={{marginTop:"8px"}}>
         <div style={{ boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px" }} className='container col-sm-6 p-3 rounded-3'>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3 d-flex justify-content-between gap-5">
@@ -55,7 +55,7 @@ export default function Connect() {
                 </div>
                 <button type="submit" className="btn btn-primary">Connect</button>
             </form>
-            <ToastContainer />
+            <ToastContainer limit={1}/>
         </div>
         </div>
     )

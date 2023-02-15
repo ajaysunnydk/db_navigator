@@ -2,9 +2,7 @@ import './style.css'
 function Header() {
     return (
         <nav className="navbar">
-            <div className="left">
-                <h2 className="heading">Dextrus</h2>
-            </div>
+            <h1 className="heading">Dextrus</h1>
         </nav>
     )
 }

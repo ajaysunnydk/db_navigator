@@ -25,6 +25,7 @@ const Home = () => {
             .then(resp => {
 
                 setCatalogs(resp.data)
+                toast.dismiss();
                 toast.success("Connection Successful")
             }).catch(error => {
                 console.log("catch")
@@ -51,7 +52,7 @@ const Home = () => {
                     </div>
                 ))}
             </div>
-            <ToastContainer />
+            <ToastContainer limit={1} />
         </div>
     );
 };

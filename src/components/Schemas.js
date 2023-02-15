@@ -4,7 +4,7 @@ import { useState } from "react";
 import './style.css';
 import Tables from './Tables';
 import Views from './Views';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function Schemas(props) {
     const headers = {
@@ -76,6 +76,7 @@ export default function Schemas(props) {
                     )}
                 </div>
             ))}
+            <ToastContainer limit={1}/>
         </div>
     )
 }
