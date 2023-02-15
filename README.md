@@ -4,9 +4,9 @@ The db_navigator is a React project that allows users to connect to a data sourc
 ## Prerequisites:
 Before using the db_navigator project, ensure that you have the following prerequisites installed on your system:
 
-Node.js
-npm (Node Package Manager)
-React
+* Node.js
+* npm (Node Package Manager)
+* React
 
 ## Getting Started:
 
