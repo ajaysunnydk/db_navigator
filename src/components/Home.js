@@ -44,7 +44,7 @@ const Home = () => {
                 {catalogs.map(catalog => (
                     <div key={catalog} className="catalogs-list">
                         <button className="catalog-button" onClick={() => toggleExpand(catalog)}>
-                        <i className="bi bi-database-fill" style={{color:"#0d6efd", paddingRight:"2px"}} ></i>{catalog}
+                        {expandedCatalog === catalog ?(<i class="bi bi-chevron-down small text-primary"></i>):(<i class="bi bi-chevron-right small text-primary"></i>)}<i className="bi bi-database-fill" style={{color:"#0d6efd", paddingRight:"2px"}} ></i>{catalog}
                         </button>
                         {expandedCatalog === catalog && (
                             <Schemas body={reqBody} schemas={catalog} />

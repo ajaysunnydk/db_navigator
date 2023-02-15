@@ -56,18 +56,18 @@ export default function Schemas(props) {
             {schemas.map(schema => (
                 <div key={schema} className="schemas-list">
                     <button className="schema-button" onClick={() => toggleExpand(schema)}>
-                        <i style={{color:"#0d6efd"}} className="bi bi-diagram-2-fill"></i>{schema}
+                        {expandedSchema === schema?(<i class="bi bi-chevron-down small text-primary"></i>):(<i class="bi bi-chevron-right small text-primary"></i>)}<i style={{color:"#0d6efd"}} className="bi bi-diagram-2-fill"></i>{schema}
                     </button>
                     {expandedSchema === schema && (
                         <div className='tables-views-buttons'>
                             <div onClick={() => handleTablesButton()}>
-                            <i className="bi bi-card-checklist" style={{color:"#0d6efd",marginLeft:"5px"}}></i><button>Tables</button>
+                            {showTables?(<i class="bi bi-chevron-down small text-primary"></i>):(<i class="bi bi-chevron-right small text-primary"></i>)}<i className="bi bi-card-checklist" style={{color:"#0d6efd",marginLeft:"5px"}}></i><button>Tables</button>
                             </div>
                             {
                                 showTables && <Tables body={reqBody} headers={headers} catalog={selectedCatalog} schema={schema} />
                             }
                             <div onClick={() => handleViewsButton()}>
-                            <i className="bi bi-card-checklist" style={{color:"#0d6efd",marginLeft:"5px"}}></i><button>Views</button>
+                            {showViews?(<i class="bi bi-chevron-down small text-primary"></i>):(<i class="bi bi-chevron-right small text-primary"></i>)}<i className="bi bi-card-checklist" style={{color:"#0d6efd",marginLeft:"5px"}}></i><button>Views</button>
                             </div>
                             {
                                 showViews && <Views body={reqBody} headers={headers} catalog={selectedCatalog} schema={schema} />
