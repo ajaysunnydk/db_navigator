@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import IP from '../config';
 
 export default function Connect() {
   
@@ -23,7 +24,7 @@ export default function Connect() {
         };
 
         const databody = JSON.stringify(data);
-        axios.post("http://192.168.0.157:8080/dextrus/connect", databody, { headers: headers, cache: false })
+        axios.post("http://"+IP+":8080/dextrus/connect", databody, { headers: headers, cache: false })
             .then(resp => {
                 if (resp.status === 200) {
                     toast.dismiss();

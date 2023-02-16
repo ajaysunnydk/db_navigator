@@ -5,6 +5,7 @@ import Schemas from "./Schemas";
 import './style.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import IP from "../config";
 
 const Home = () => {
     const location = useLocation();
@@ -21,7 +22,7 @@ const Home = () => {
     console.log(catalogs.length)
     if (catalogs.length === 0) {
 
-        axios.post("http://192.168.0.157:8080/dextrus/", reqBody, { headers: headers, cache: false })
+        axios.post("http://"+IP+":8080/dextrus/", reqBody, { headers: headers, cache: false })
             .then(resp => {
 
                 setCatalogs(resp.data)

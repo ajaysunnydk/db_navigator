@@ -4,10 +4,11 @@ import './style.css'
 import Columns from './Columns';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import IP from '../config';
 
 export default function Views(props) {
-    const ip = "192.168.0.157"
-    const url = "http://"+ip+":8080/dextrus/" + props.catalog + "/" + props.schema;
+
+    const url = "http://"+IP+":8080/dextrus/" + props.catalog + "/" + props.schema;
     const [tables, setTables] = useState([]);
 
     if (tables.length === 0) {
